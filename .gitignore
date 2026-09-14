@@ -1,0 +1,31 @@
+# Local Python environment and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local configuration and API keys
+.env
+.env.*
+!.env.example
+
+# Uploaded documents and generated search data
+data/uploads/
+data/processed/
+data/indexes/
+uploads/
+*.faiss
+
+# Build output and editor files
+build/
+dist/
+*.egg-info/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
