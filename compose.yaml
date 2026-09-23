@@ -1,0 +1,15 @@
+services:
+  api:
+    build:
+      context: .
+    image: paper-rag:local
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data/indexes:/app/data/indexes
+      - huggingface-cache:/home/appuser/.cache/huggingface
+
+volumes:
+  huggingface-cache:

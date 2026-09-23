@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "paper-rag"
+version = "0.1.0"
+description = "A source-grounded research-document assistant using local embeddings, FAISS, Gemini, and FastAPI"
+readme = "README.md"
+requires-python = ">=3.11"
+keywords = ["rag", "llm", "faiss", "fastapi", "semantic-search"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Framework :: FastAPI",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+dependencies = [
+    "pypdf>=6,<7",
+    "sentence-transformers>=6,<7",
+    "faiss-cpu>=1.15,<2",
+    "numpy>=2,<3",
+    "google-genai>=1,<2",
+    "python-dotenv>=1,<2",
+    "fastapi>=0.115,<1",
+    "uvicorn>=0.30,<1",
+    "python-multipart>=0.0.18,<1",
+    "pydantic>=2,<3",
+    "httpx>=0.28,<1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8,<10",
+]
+
+[project.scripts]
+paper-rag-prepare = "paper_rag.prepare:main"
+paper-rag-retrieve = "paper_rag.retrieval:main"
+paper-rag-ask = "paper_rag.rag:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

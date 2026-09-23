@@ -1,0 +1,39 @@
+# Version control
+.git/
+.gitignore
+
+# Local Python environments
+.venv/
+venv/
+
+# Python caches and build output
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+
+# Generated and local data
+data/
+uploads/
+*.faiss
+
+# Development-only files
+tests/
+scripts/
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

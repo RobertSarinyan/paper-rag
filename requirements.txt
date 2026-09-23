@@ -1,0 +1,3 @@
+# Local development install. Runtime and development dependencies are declared
+# in pyproject.toml so their version constraints have one source of truth.
+-e .[dev]
